@@ -47,7 +47,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="exampleInputFile" class="col-md-3 control-label">Image</label>
+                                    <label for="exampleInputFile" class="col-md-3 control-label">Image (<?php echo e($ad->description); ?></label>
                                     <br>
                                     <input type="file" id="image" name="image">
                                 </div>

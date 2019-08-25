@@ -65,9 +65,13 @@
                                 <div class="form-group">
                                     <label> Category</label>
                                     <select class="form-control" name="category">
+                                        <?php if($categories->count()): ?>
                                         <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($category->id); ?>"><?php echo e($category->title_en); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php else: ?>
+                                        <option value="">Kindly Contact Admin for Category Permissions</option>
+                                        <?php endif; ?>
                                     </select>
                                 </div>
                                 <div>

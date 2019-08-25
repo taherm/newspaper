@@ -69,14 +69,14 @@
                                                     <a href="{{ route('ad.edit', $ad->id) }}">
                                                         <i class="icon-docs"></i> Edit Ad </a>
                                                 </li>
-                                                <li>
+                                                {{-- <li>
                                                     <form method="POST" action="{{ route('ad.destroy', $ad->id) }}" class="delete">
-                                                        {{ csrf_field() }}
-                                                        {{ method_field('DELETE') }}
-                                                        <input name="_method" value="delete" type="hidden">
-                                                        <button class="btn btn-danger" type="submit">Delete Ad</button>
-                                                    </form>
-                                                </li>
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <input name="_method" value="delete" type="hidden">
+                                                <button class="btn btn-danger" type="submit">Delete Ad</button>
+                                                </form>
+                                                </li>--}}
 
                                             </ul>
                                         </div>

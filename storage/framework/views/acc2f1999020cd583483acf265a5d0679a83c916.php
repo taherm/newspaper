@@ -52,7 +52,7 @@
                                     <select class="form-control" name="parent_id">
                                         <option value="0">Select Parent Category</option>
                                         <?php $__currentLoopData = $parent_categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $parent_category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($parent_category->id); ?>"><?php echo e($parent_category->title); ?></option>
+                                        <option value="<?php echo e($parent_category->id); ?>"><?php echo e($parent_category->title_en); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
                                 </div>

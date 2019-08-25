@@ -52,7 +52,7 @@
                                     <select class="form-control" name="parent_id">
                                         <option value="0">Select Parent Category</option>
                                         @foreach($parent_categories as $parent_category)
-                                        <option value="{{ $parent_category->id}}">{{ $parent_category->title}}</option>
+                                        <option value="{{ $parent_category->id}}">{{ $parent_category->title_en}}</option>
                                         @endforeach
                                     </select>
                                 </div>

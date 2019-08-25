@@ -68,16 +68,7 @@
                                                     <a href="<?php echo e(route('ad.edit', $ad->id)); ?>">
                                                         <i class="icon-docs"></i> Edit Ad </a>
                                                 </li>
-                                                <li>
-                                                    <form method="POST" action="<?php echo e(route('ad.destroy', $ad->id)); ?>" class="delete">
-                                                        <?php echo e(csrf_field()); ?>
-
-                                                        <?php echo e(method_field('DELETE')); ?>
-
-                                                        <input name="_method" value="delete" type="hidden">
-                                                        <button class="btn btn-danger" type="submit">Delete Ad</button>
-                                                    </form>
-                                                </li>
+                                                
 
                                             </ul>
                                         </div>

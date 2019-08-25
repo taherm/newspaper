@@ -29,10 +29,7 @@
                             <i class="icon-docs"></i> New Post </a>
                     </li>
                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdmin')): ?>
-                    <li>
-                        <a href="<?php echo e(route('ad.create')); ?>">
-                            <i class="icon-tag"></i> New Ad </a>
-                    </li>
+                    
                     <li>
                         <a href="<?php echo e(route('user.create')); ?>">
                             <i class="icon-share"></i> New User </a>

@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\User;
 use Auth;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -31,7 +31,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = User::find(Auth::id())->categories;
+        if (Auth::user()->name == 'admin') {
+            $categories = Category::all();
+        } else {
+            $categories = User::find(Auth::id())->categories;
+        }
         return view('backend.posts.create', compact('categories'));
     }
 
@@ -78,7 +82,11 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $categories = User::find(Auth::id())->categories;
+        if (Auth::user()->name == 'admin') {
+            $categories = Category::all();
+        } else {
+            $categories = User::find(Auth::id())->categories;
+        }
         $post = Post::where('id', $id)->first();
         return view('backend.posts.edit', compact('post', 'categories'));
     }
@@ -97,12 +105,15 @@ class PostController extends Controller
             'title_ar' => 'required',
             'description_en' => 'required',
             'description_ar' => 'required',
-            'image' => 'required',
-            'category' => 'required',
         ]);
         //dd($request->image);
-        $imageName =  $request->image->store('public/images');
-        Post::whereId($id)->update(['title_en' => $request->title_en, 'category_id' => $request->category, 'title_ar' => $request->title_ar, 'description_en' => $request->description_en, 'description_ar' => $request->description_ar, 'image' => $imageName]);
+        if ($request->image) {
+            Storage::delete(Post::find($id)->image);
+            $imageName =  $request->image->store('public/images');
+            Post::whereId($id)->update(['title_en' => $request->title_en, 'category_id' => $request->category, 'title_ar' => $request->title_ar, 'description_en' => $request->description_en, 'description_ar' => $request->description_ar, 'image' => $imageName]);
+        } else {
+            Post::whereId($id)->update(['title_en' => $request->title_en, 'category_id' => $request->category, 'title_ar' => $request->title_ar, 'description_en' => $request->description_en, 'description_ar' => $request->description_ar]);
+        }
         session()->flash('message', 'Post Updated!');
         return redirect(route('post.index'));
     }
@@ -115,6 +126,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        Storage::delete(Post::find($id)->image);
         Post::where('id', $id)->delete();
         session()->flash('message', 'Post Deleted!');
         return redirect()->back();

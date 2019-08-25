@@ -65,9 +65,13 @@
                                 <div class="form-group">
                                     <label> Category</label>
                                     <select class="form-control" name="category">
+                                        @if($categories->count())
                                         @foreach($categories as $category)
                                         <option value="{{ $category->id}}">{{ $category->title_en}}</option>
                                         @endforeach
+                                        @else
+                                        <option value="">Kindly Contact Admin for Category Permissions</option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div>

@@ -41,8 +41,8 @@
 
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Title</label>
-                                    <input type="text" class="form-control" name="title" value=<?php echo e($post->title); ?>>
+                                    <label for="exampleInputEmail1">Title English</label>
+                                    <input type="text" class="form-control" name="title_en" value=<?php echo e($post->title_en); ?>>
                                 </div>
 
                                 <div class="form-group">
@@ -51,8 +51,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Description</label>
-                                    <input type="text" class="form-control" name="description" value=<?php echo e($post->description); ?>>
+                                    <label for="exampleInputEmail1">Description English</label>
+                                    <input type="text" class="form-control" name="description_en" value=<?php echo e($post->description_en); ?>>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Description Arabic</label>
@@ -67,7 +67,7 @@
                                     <label> Category</label>
                                     <select class="form-control" name="category">
                                         <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($category->id); ?>"><?php echo e($category->title); ?></option>
+                                        <option value="<?php echo e($category->id); ?>"><?php echo e($category->title_en); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
                                 </div>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Ad;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class AdController extends Controller
@@ -84,11 +84,16 @@ class AdController extends Controller
     {
         $this->validate($request, [
             'url' => 'required',
-            'image' => 'required'
         ]);
         //dd($request->image);
-        $imageName =  $request->image->store('public/images');
-        Ad::whereId($id)->update(['url' => $request->url, 'image' => $imageName]);
+        if ($request->image) {
+            Storage::delete(Ad::find($id)->image);
+            $imageName =  $request->image->store('public/images');
+            Ad::whereId($id)->update(['url' => $request->url, 'image' => $imageName]);
+        } else {
+            Ad::whereId($id)->update(['url' => $request->url]);
+        }
+
         session()->flash('message', 'Ad Updated!');
         return redirect(route('ad.index'));
     }
@@ -101,6 +106,7 @@ class AdController extends Controller
      */
     public function destroy($id)
     {
+        //Storage::delete(Ad::find($id)->image);
         Ad::where('id', $id)->delete();
         session()->flash('message', 'Ad Deleted!');
         return redirect()->back();

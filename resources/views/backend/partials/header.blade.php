@@ -29,10 +29,10 @@
                             <i class="icon-docs"></i> New Post </a>
                     </li>
                     @can('isAdmin')
-                    <li>
+                    {{-- <li>
                         <a href="{{route('ad.create')}}">
-                            <i class="icon-tag"></i> New Ad </a>
-                    </li>
+                    <i class="icon-tag"></i> New Ad </a>
+                    </li>--}}
                     <li>
                         <a href="{{route('user.create')}}">
                             <i class="icon-share"></i> New User </a>
