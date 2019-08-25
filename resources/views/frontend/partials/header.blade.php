@@ -218,7 +218,7 @@
                 </div>
                 <div class="col-xs-8 col-md-8 col-sm-8 hidden-xs">
                     <div class="header-banner">
-                        <a href="#"><img class="td-retina img-responsive" src="{{url('images/top-bannner.jpg')}}" alt=""></a>
+                        <a href="http://{{$ads[0]->url}}"><img class="td-retina img-responsive" src="{{Storage::disk('local')->url($ads[0]->image)}}" alt=""></a>
                     </div>
                 </div>
             </div>

@@ -40,8 +40,8 @@
 
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name</label>
-                                    <input type="text" class="form-control" name="name">
+                                    <label for="exampleInputEmail1">URL</label>
+                                    <input type="text" class="form-control" name="url">
                                 </div>
 
 

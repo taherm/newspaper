@@ -1,5 +1,4 @@
-@extends('backend.layouts.master')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
@@ -33,15 +32,17 @@
                     </div>
                     <div class="portlet-body">
 
-                        <form method="post" action="{{ route('ad.update', $ad->id) }}" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            {{ method_field('PATCH') }}
+                        <form method="post" action="<?php echo e(route('ad.update', $ad->id)); ?>" enctype="multipart/form-data">
+                            <?php echo e(csrf_field()); ?>
+
+                            <?php echo e(method_field('PATCH')); ?>
+
                             <div class="form-group">
 
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">URL</label>
-                                    <input type="text" class="form-control" name="url" value={{$ad->url}}>
+                                    <input type="text" class="form-control" name="url" value=<?php echo e($ad->url); ?>>
                                 </div>
 
 
@@ -75,4 +76,5 @@
 <!-- END CONTENT BODY -->
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\newspaper\resources\views/backend/ads/edit.blade.php ENDPATH**/ ?>

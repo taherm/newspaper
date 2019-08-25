@@ -1,5 +1,4 @@
-@extends('backend.layouts.master')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
@@ -7,7 +6,7 @@
     <div class="page-content">
         <!-- BEGIN PAGE HEADER-->
 
-        <h3 class="page-title">Edit Ad
+        <h3 class="page-title">Create Ads
         </h3>
         <div class="page-bar">
             <ul class="page-breadcrumb">
@@ -27,21 +26,22 @@
                     <div class="portlet-title">
                         <div class="caption font-dark">
                             <i class="icon-settings font-dark"></i>
-                            <span class="caption-subject bold uppercase">Edit Ad</span>
+                            <span class="caption-subject bold uppercase">Create Ads</span>
                         </div>
 
                     </div>
                     <div class="portlet-body">
 
-                        <form method="post" action="{{ route('ad.update', $ad->id) }}" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            {{ method_field('PATCH') }}
+                        <form method="post" action="<?php echo e(route('ad.store')); ?>" enctype="multipart/form-data">
+                            <?php echo e(csrf_field()); ?>
+
+
                             <div class="form-group">
 
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">URL</label>
-                                    <input type="text" class="form-control" name="url" value={{$ad->url}}>
+                                    <input type="text" class="form-control" name="url">
                                 </div>
 
 
@@ -75,4 +75,5 @@
 <!-- END CONTENT BODY -->
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\newspaper\resources\views/backend/ads/create.blade.php ENDPATH**/ ?>

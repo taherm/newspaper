@@ -40,12 +40,12 @@ class AdController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required',
+            'url' => 'required',
             'image' => 'required'
         ]);
         $imageName =  $request->image->store('public/images');
 
-        Ad::create(['name' => $request->name, 'image' => $imageName]);
+        Ad::create(['url' => $request->url, 'image' => $imageName]);
         session()->flash('message', 'Ad Created!');
         return redirect(route('ad.index'));
     }
@@ -83,12 +83,12 @@ class AdController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'url' => 'required',
             'image' => 'required'
         ]);
         //dd($request->image);
         $imageName =  $request->image->store('public/images');
-        Ad::whereId($id)->update(['name' => $request->name, 'image' => $imageName]);
+        Ad::whereId($id)->update(['url' => $request->url, 'image' => $imageName]);
         session()->flash('message', 'Ad Updated!');
         return redirect(route('ad.index'));
     }

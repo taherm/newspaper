@@ -39,8 +39,8 @@
 
                                     <th> ID </th>
 
-
-                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>URL</th>
 
 
 
@@ -55,8 +55,8 @@
                                 <tr class="odd gradeX">
 
                                     <td> {{$ad->id}} </td>
-
-                                    <td class="center"> {{$ad->name}} </td>
+                                    <td class="center"> {{$ad->description}} </td>
+                                    <td class="center"> {{$ad->url}} </td>
 
 
                                     <td>

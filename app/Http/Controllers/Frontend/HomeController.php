@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Ad;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,8 +15,9 @@ class HomeController extends Controller
         $posts = Post::find(1);
         //$category_with_children = Category::with('children')->get();
         $categories = Category::all();
+        $ads = Ad::all();
         // $root_categories = Category::whereNull('parent_id')->get();
-        return view('frontend.index', compact('posts', 'categories'));
+        return view('frontend.index', compact('posts', 'categories', 'ads'));
     }
 
 

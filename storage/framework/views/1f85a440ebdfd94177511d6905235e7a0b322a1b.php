@@ -38,8 +38,8 @@
 
                                     <th> ID </th>
 
-
-                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>URL</th>
 
 
 
@@ -54,8 +54,8 @@
                                 <tr class="odd gradeX">
 
                                     <td> <?php echo e($ad->id); ?> </td>
-
-                                    <td class="center"> <?php echo e($ad->name); ?> </td>
+                                    <td class="center"> <?php echo e($ad->description); ?> </td>
+                                    <td class="center"> <?php echo e($ad->url); ?> </td>
 
 
                                     <td>
