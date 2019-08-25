@@ -17,7 +17,7 @@ Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('/', 'HomeController@index');
     Route::get('/post/{id}', 'HomeController@showpost');
-    Route::get('/test2', function () {
+    Route::get('/test', function () {
         // $user = App\User::find(1);
         $user = App\User::find(1)->categories;
         dd($user);
