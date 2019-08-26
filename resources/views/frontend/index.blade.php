@@ -9,16 +9,16 @@
                 <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
                     <div class="post-thumb img-zoom-in">
                         <a href="#">
-                            <img class="entry-thumb" src="{{Storage::disk('local')->url('images/post_1.jpg')}}" alt="">
+                            <img class="entry-thumb" src="{{Storage::disk('local')->url($posts[0]->image)}}" alt="">
                         </a>
                     </div>
                     <div class="post-info">
-                        <span class="color-1">{{ $posts->title }}</span>
-                        <h3 class="post-title post-title-size"><a href="#" rel="bookmark">Sample Post </a></h3>
+                        <span class="color-1">Fashion</span>
+                        <h3 class="post-title post-title-size"><a href="#" rel="bookmark">{{$posts[0]->title}} </a></h3>
                         <div class="post-editor-date">
                             <!-- post date -->
                             <div class="post-date">
-                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                <i class="pe-7s-clock"></i> {{$posts[0]->created_at->diffForHumans()}}
                             </div>
                             <!-- post comment -->
                             <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
@@ -30,20 +30,21 @@
             </div>
             <div class="col-xs-12 col-md-6 col-sm-6 col-padding">
                 <div id="news-feed-carousel" class="owl-carousel owl-theme">
+                    @foreach($posts as $post)
                     <div class="item">
                         <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
                             <div class="post-thumb img-zoom-in">
                                 <a href="#">
-                                    <img class="entry-thumb" src="{{Storage::disk('local')->url('images/post_2.jpg')}}" alt="">
+                                    <img class="entry-thumb" src="{{Storage::disk('local')->url($post->image)}}" alt="">
                                 </a>
                             </div>
                             <div class="post-info">
                                 <span class="color-2">FASHION </span>
-                                <h3 class="post-title"><a href="#" rel="bookmark">Sample Post </a></h3>
+                                <h3 class="post-title"><a href="#" rel="bookmark">{{$post->title}} </a></h3>
                                 <div class="post-editor-date">
                                     <!-- post date -->
                                     <div class="post-date">
-                                        <i class="pe-7s-clock"></i> Oct 6, 2016
+                                        <i class="pe-7s-clock"></i>{{$post->created_at->diffForHumans()}}
                                     </div>
                                     <!-- post comment -->
                                     <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
@@ -53,68 +54,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
-                            <div class="post-thumb img-zoom-in">
-                                <a href="#">
-                                    <img class="entry-thumb" src="{{Storage::disk('local')->url('images/post_3.jpg')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="post-info">
-                                <span class="color-3">FASHION </span>
-                                <h3 class="post-title"><a href="#" rel="bookmark">Sample Post </a></h3>
-                                <div class="post-editor-date">
-                                    <!-- post date -->
-                                    <div class="post-date">
-                                        <i class="pe-7s-clock"></i> Oct 6, 2016
-                                    </div>
-                                    <!-- post comment -->
-                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                    <!-- read more -->
-                                    <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
-                            <div class="post-thumb img-zoom-in">
-                                <a href="#">
-                                    <img class="entry-thumb" src="{{Storage::disk('local')->url('images/post_3.jpg')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="post-info">
-                                <span class="color-4">FASHION </span>
-                                <h3 class="post-title"><a href="#" rel="bookmark">Sample Post </a></h3>
-                                <div class="post-editor-date">
-                                    <!-- post date -->
-                                    <div class="post-date">
-                                        <i class="pe-7s-clock"></i> Oct 6, 2016
-                                    </div>
-                                    <!-- post comment -->
-                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                    <!-- read more -->
-                                    <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
             <div class="col-sm-3 hidden-xs col-padding">
                 <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
                     <div class="post-thumb img-zoom-in">
                         <a href="#">
-                            <img class="entry-thumb" src="images/slider/slide-05.jpg" alt="">
+                            <img class="entry-thumb" src="{{Storage::disk('local')->url($posts[2]->image)}}" alt="">
                         </a>
                     </div>
                     <div class="post-info">
                         <span class="color-5">FASHION </span>
-                        <h3 class="post-title post-title-size"><a href="#" rel="bookmark">Sample Post </a></h3>
+                        <h3 class="post-title post-title-size"><a href="#" rel="bookmark">{{$posts[2]->title}} </a></h3>
                         <div class="post-editor-date">
                             <!-- post date -->
                             <div class="post-date">
-                                <i class="pe-7s-clock"></i> Oct 6, 2016
+                                <i class="pe-7s-clock"></i> {{$posts[2]->created_at->diffForHumans()}}
                             </div>
                             <!-- post comment -->
                             <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>

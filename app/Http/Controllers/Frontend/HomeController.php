@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::find(1);
+        $posts = Post::all();
         //$category_with_children = Category::with('children')->get();
         $categories = Category::all();
         //dd($categories);
@@ -26,9 +26,9 @@ class HomeController extends Controller
     {
         $post = Post::find($id);
         $categories = Category::all();
-
+        $ads = Ad::all();
         //dd($post);
-        return view('frontend.post', compact('post', 'categories'));
+        return view('frontend.post', compact('post', 'categories', 'ads'));
     }
 
     public function changeLanguage()
