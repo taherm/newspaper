@@ -15,6 +15,7 @@ class HomeController extends Controller
         $posts = Post::find(1);
         //$category_with_children = Category::with('children')->get();
         $categories = Category::all();
+        //dd($categories);
         $ads = Ad::all();
         // $root_categories = Category::whereNull('parent_id')->get();
         return view('frontend.index', compact('posts', 'categories', 'ads'));

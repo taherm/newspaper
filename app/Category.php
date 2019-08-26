@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Category extends PrimaryModel
 {
+    protected $localeStrings = ['title'];
     protected $fillable = ['title_en', 'title_ar', 'parent_id'];
 
     public function parent()
