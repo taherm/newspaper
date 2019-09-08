@@ -6,14 +6,22 @@
             <article class="content">
                 <div class="post-thumb">
                     <img src="{{Storage::disk('local')->url($post->image)}}" class="img-responsive post-image" alt="">
-                    <div class="social">
-                        <ul>
-                            <li><a href="#" class="facebook"><i class="fa  fa-facebook"></i><span>3987</span> </a></li>
-                            <li><a href="#" class="twitter"><i class="fa  fa-twitter"></i><span>3987</span></a></li>
+                    <div class="social a2a_kit">
+                        <ul class="social-icons">
+                            <li><a href="{{ request()->fullUrl() }}" class="a2a_button_facebook facebook"><i class="fa fa-facebook"></i><span>3987</span> </a></li>
+                            <li><a href="{{ request()->fullUrl() }}" class="a2a_button_twitter twitter"><i class="fa  fa-twitter"></i><span>3987</span></a></li>
                             <li><a href="#" class="google"><i class="fa  fa-google-plus"></i><span>3987</span></a></li>
                             <li><a href="#" class="flickr"><i class="fa fa-flickr"></i><span>3987</span> </a></li>
                         </ul>
                     </div>
+                    <ul class="social-icons list-inline">
+                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                            <li><a class="a2a_button_facebook facebook" href="{{ request()->fullUrl() }}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ request()->fullUrl() }}" class=" a2a_button_twitter twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{ request()->fullUrl() }}" class="a2a_button_instagram instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="{{ request()->fullUrl() }}" class="a2a_button_pinterest pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        </div>
+                    </ul>
                     <!-- /.social icon -->
                 </div>
                 <h1>{{$post->title}}</h1>
@@ -611,4 +619,5 @@
         </div>
     </div>
 </div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
 @endsection
