@@ -493,7 +493,7 @@
             </section>
             <!-- /.Politics -->
             <div class="ads">
-                <a href="#"><img src="images/top-bannner2.jpg" class="img-responsive center-block" alt=""></a>
+                <a href="http://<?php echo e($ads[2]->url); ?>"><img src="<?php echo e(Storage::disk('local')->url($ads[2]->image)); ?>" class="img-responsive center-block" alt=""></a>
             </div>
         </div>
         <!-- /.left content inner -->
@@ -536,7 +536,7 @@
             <div class="banner-add">
                 <!-- add -->
                 <span class="add-title">- Advertisement -</span>
-                <a href="#"><img src="images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                <a href="http://<?php echo e($ads[1]->url); ?>"><img src="<?php echo e(Storage::disk('local')->url($ads[1]->image)); ?>" class="img-responsive center-block" alt=""></a>
             </div>
             <div class="tab-inner">
                 <ul class="tabs">
@@ -1295,7 +1295,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="ads">
-                <a href="#"><img src="images/top-bannner2.jpg" class="img-responsive center-block" alt=""></a>
+                <a href="http://<?php echo e($ads[2]->url); ?>"><img src="<?php echo e(Storage::disk('local')->url($ads[2]->image)); ?>" class="img-responsive center-block" alt=""></a>
             </div>
         </div>
     </div>

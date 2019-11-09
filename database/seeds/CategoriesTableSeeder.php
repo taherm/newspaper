@@ -134,6 +134,15 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:15:06',
                 'updated_at' => '2019-08-26 15:15:06',
             ),
+            13 => 
+            array (
+                'id' => 16,
+                'title_en' => 'Official News',
+                'title_ar' => 'أخبار رسمية',
+                'parent_id' => 4,
+                'created_at' => '2019-11-05 08:22:03',
+                'updated_at' => '2019-11-05 08:22:03',
+            ),
         ));
         
         

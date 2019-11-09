@@ -234,16 +234,16 @@
                     @foreach($categories as $category)
                     @if($category->children->count() > 0)
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle category03" data-toggle="dropdown">{{$category->title}} <span class="pe-7s-angle-down"></span></a>
+                        <a href="{{ route('category.posts', ['id'=>$category->id]) }}" class="dropdown-toggle category03" data-toggle="dropdown">{{$category->title}} <span class="pe-7s-angle-down"></span></a>
                         <ul class="dropdown-menu menu-slide">
                             @foreach($category->children as $submenu)
-                            <li><a href="#">{{$submenu->title}}</a></li>
+                            <li><a href="{{ route('category.posts', ['id'=>$submenu->id]) }}">{{$submenu->title}}</a></li>
                             @endforeach
                         </ul>
                     </li>
                     @endif
                     @if($category->children->count() == 0 && $category->parent_id==0)
-                    <li><a href="#" class="category06">{{$category->title}}</a></li>
+                    <li><a href="{{ route('category.posts', ['id'=>$category->id]) }}" class="category06">{{$category->title}}</a></li>
                     @endif
                     @endforeach
 

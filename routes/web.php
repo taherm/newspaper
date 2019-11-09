@@ -24,6 +24,7 @@ Route::group(['namespace' => 'Frontend'], function () {
         return view('frontend.post', compact('categories'));
     });
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
+    Route::get('/category/{id}', 'HomeController@category')->name('category.posts');;
 });
 
 

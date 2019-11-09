@@ -38,4 +38,15 @@ class HomeController extends Controller
         session()->put('locale', request('locale'));
         return redirect()->back();
     }
+
+    public function category($id)
+    {
+        $categories = Category::all();
+        $current_category = Category::find($id);
+        $posts = $current_category->posts;
+        //dd($posts[2]->user);
+        // dd($posts);
+        $ads = Ad::all();
+        return view('frontend.category', compact('categories', 'posts', 'current_category', 'ads'));
+    }
 }

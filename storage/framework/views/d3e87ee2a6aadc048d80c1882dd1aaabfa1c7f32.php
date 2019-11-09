@@ -234,16 +234,16 @@
                     <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php if($category->children->count() > 0): ?>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle category03" data-toggle="dropdown"><?php echo e($category->title); ?> <span class="pe-7s-angle-down"></span></a>
+                        <a href="<?php echo e(route('category.posts', ['id'=>$category->id])); ?>" class="dropdown-toggle category03" data-toggle="dropdown"><?php echo e($category->title); ?> <span class="pe-7s-angle-down"></span></a>
                         <ul class="dropdown-menu menu-slide">
                             <?php $__currentLoopData = $category->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $submenu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li><a href="#"><?php echo e($submenu->title); ?></a></li>
+                            <li><a href="<?php echo e(route('category.posts', ['id'=>$submenu->id])); ?>"><?php echo e($submenu->title); ?></a></li>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </li>
                     <?php endif; ?>
                     <?php if($category->children->count() == 0 && $category->parent_id==0): ?>
-                    <li><a href="#" class="category06"><?php echo e($category->title); ?></a></li>
+                    <li><a href="<?php echo e(route('category.posts', ['id'=>$category->id])); ?>" class="category06"><?php echo e($category->title); ?></a></li>
                     <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

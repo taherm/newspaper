@@ -23,6 +23,12 @@ class CategoryUserTableSeeder extends Seeder
                 'user_id' => 1,
                 'category_id' => 1,
             ),
+            1 => 
+            array (
+                'id' => 3,
+                'user_id' => 2,
+                'category_id' => 15,
+            ),
         ));
         
         
