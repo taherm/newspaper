@@ -6,8 +6,8 @@
                 <h1><?php echo e($current_category->title); ?></h1>
                 <div class="breadcrumbs">
                     <ul>
-                        <li><i class="pe-7s-home"></i> <a href="home-style-one.html" title="">Home</a></li>
-                        <li><a href="#" title=""><?php echo e($current_category->title); ?></a></li>
+                        <li><i class="pe-7s-home"></i> <a href="/" title="">Home</a></li>
+                        <li><a href="<?php echo e(route('category.posts', ['id'=>$current_category->id])); ?>" title=""><?php echo e($current_category->title); ?></a></li>
                     </ul>
                 </div>
             </div>
@@ -21,9 +21,9 @@
             <!--Post list-->
             <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="post-style2 wow fadeIn" data-wow-duration="1s">
-                <a href="#"><img src="<?php echo e(Storage::disk('local')->url($post->image)); ?>" with="250px" height="205px" alt=""></a>
+                <a href="<?php echo e(route('posts.show', ['id'=>$post->id])); ?>"><img src="<?php echo e(Storage::disk('local')->url($post->image)); ?>" with="250px" height="205px" alt=""></a>
                 <div class="post-style2-detail">
-                    <h3><a href="#" title=""><?php echo e($post->title); ?></a></h3>
+                    <h3><a href="<?php echo e(route('posts.show', ['id'=>$post->id])); ?>" title=""><?php echo e($post->title); ?></a></h3>
                     <div class="date">
                         <ul>
                             
@@ -33,7 +33,7 @@
                         </ul>
                     </div>
                     <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh.</p>
-                    <button type="button" class="btn btn-style">Reade more</button>
+                    
                 </div>
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

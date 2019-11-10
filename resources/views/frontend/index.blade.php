@@ -98,7 +98,7 @@
                         <div class="item">
                             <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
                                 <!-- image -->
-                                <h3><a href="post/{{$post->id}}">{{$post->title}}</a></h3>
+                                <h3><a href="{{ route('posts.show', ['id'=>$post->id]) }}">{{$post->title}}</a></h3>
                                 <div class="post-thumb">
                                     <a href="#">
                                         <img class="img-responsive" src="{{Storage::disk('local')->url($post->image)}}" alt="">

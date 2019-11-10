@@ -15,7 +15,7 @@
                         </div>
                         <!-- /input-group -->
                     </li>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>
                         <a href="#">All pages<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -211,7 +211,7 @@
                 <div class="col-xs-12 col-md-4 col-sm-4">
                     <div class="header-logo">
                         <!-- logo -->
-                        <a href="home-style-one.html">
+                        <a href="/">
                             <img class="td-retina-data img-responsive" src="<?php echo e(Storage::disk('local')->url('images/logo.png')); ?>" alt="">
                         </a>
                     </div>

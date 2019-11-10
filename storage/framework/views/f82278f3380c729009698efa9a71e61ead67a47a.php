@@ -100,7 +100,7 @@
                         <div class="item">
                             <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
                                 <!-- image -->
-                                <h3><a href="post/<?php echo e($post->id); ?>"><?php echo e($post->title); ?></a></h3>
+                                <h3><a href="<?php echo e(route('posts.show', ['id'=>$post->id])); ?>"><?php echo e($post->title); ?></a></h3>
                                 <div class="post-thumb">
                                     <a href="#">
                                         <img class="img-responsive" src="<?php echo e(Storage::disk('local')->url($post->image)); ?>" alt="">

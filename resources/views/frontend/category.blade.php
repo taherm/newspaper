@@ -7,8 +7,8 @@
                 <h1>{{$current_category->title}}</h1>
                 <div class="breadcrumbs">
                     <ul>
-                        <li><i class="pe-7s-home"></i> <a href="home-style-one.html" title="">Home</a></li>
-                        <li><a href="#" title="">{{$current_category->title}}</a></li>
+                        <li><i class="pe-7s-home"></i> <a href="/" title="">Home</a></li>
+                        <li><a href="{{ route('category.posts', ['id'=>$current_category->id]) }}" title="">{{$current_category->title}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -22,9 +22,9 @@
             <!--Post list-->
             @foreach($posts as $post)
             <div class="post-style2 wow fadeIn" data-wow-duration="1s">
-                <a href="#"><img src="{{Storage::disk('local')->url($post->image)}}" with="250px" height="205px" alt=""></a>
+                <a href="{{ route('posts.show', ['id'=>$post->id]) }}"><img src="{{Storage::disk('local')->url($post->image)}}" with="250px" height="205px" alt=""></a>
                 <div class="post-style2-detail">
-                    <h3><a href="#" title="">{{$post->title}}</a></h3>
+                    <h3><a href="{{ route('posts.show', ['id'=>$post->id]) }}" title="">{{$post->title}}</a></h3>
                     <div class="date">
                         <ul>
                             {{-- <li><img src="images/comment-01.jpg" class="img-responsive" alt=""></li>--}}
@@ -34,7 +34,7 @@
                         </ul>
                     </div>
                     <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh.</p>
-                    <button type="button" class="btn btn-style">Reade more</button>
+                    {{-- <button type="button" class="btn btn-style">Reade more</button>--}}
                 </div>
             </div>
             @endforeach

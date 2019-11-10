@@ -16,7 +16,7 @@ use App\Http\Controllers\HomeController;
 Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('/', 'HomeController@index');
-    Route::get('/post/{id}', 'HomeController@showpost');
+    Route::get('/post/{id}', 'HomeController@showpost')->name('posts.show');;
     Route::get('/test', function () {
         // $user = App\User::find(1);
         $user = App\User::find(1)->categories;
@@ -24,7 +24,7 @@ Route::group(['namespace' => 'Frontend'], function () {
         return view('frontend.post', compact('categories'));
     });
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
-    Route::get('/category/{id}', 'HomeController@category')->name('category.posts');;
+    Route::get('/category/{id}', 'HomeController@category')->name('category.posts');
 });
 
 
