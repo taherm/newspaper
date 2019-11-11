@@ -12,8 +12,8 @@
                         </a>
                     </div>
                     <div class="post-info">
-                        <span class="color-1">Fashion</span>
-                        <h3 class="post-title post-title-size"><a href="#" rel="bookmark"><?php echo e($posts[0]->title); ?> </a></h3>
+                        <span class="color-1"><?php echo e($posts[0]->category->title); ?></span>
+                        <h3 class="post-title post-title-size"><a href="<?php echo e(route('posts.show', ['id'=>$posts[0]->id])); ?>" rel="bookmark"><?php echo e($posts[0]->title); ?> </a></h3>
                         <div class="post-editor-date">
                             <!-- post date -->
                             <div class="post-date">
@@ -39,8 +39,8 @@
                                 </a>
                             </div>
                             <div class="post-info">
-                                <span class="color-2">FASHION </span>
-                                <h3 class="post-title"><a href="#" rel="bookmark"><?php echo e($post->title); ?> </a></h3>
+                                <span class="color-2"><?php echo e($post->category->title); ?> </span>
+                                <h3 class="post-title"><a href="<?php echo e(route('posts.show', ['id'=>$post->id])); ?>" rel="bookmark"><?php echo e($post->title); ?> </a></h3>
                                 <div class="post-editor-date">
                                     <!-- post date -->
                                     <div class="post-date">
@@ -63,16 +63,16 @@
                 <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
                     <div class="post-thumb img-zoom-in">
                         <a href="#">
-                            <img class="entry-thumb" src="<?php echo e(Storage::disk('local')->url($posts[2]->image)); ?>" alt="">
+                            <img class="entry-thumb" src="<?php echo e(Storage::disk('local')->url($posts[1]->image)); ?>" alt="">
                         </a>
                     </div>
                     <div class="post-info">
-                        <span class="color-5">FASHION </span>
-                        <h3 class="post-title post-title-size"><a href="#" rel="bookmark"><?php echo e($posts[2]->title); ?> </a></h3>
+                        <span class="color-5"><?php echo e($posts[1]->category->title); ?> </span>
+                        <h3 class="post-title post-title-size"><a href="<?php echo e(route('posts.show', ['id'=>$posts[1]->id])); ?>" rel="bookmark"><?php echo e($posts[1]->title); ?> </a></h3>
                         <div class="post-editor-date">
                             <!-- post date -->
                             <div class="post-date">
-                                <i class="pe-7s-clock"></i> <?php echo e($posts[2]->created_at->diffForHumans()); ?>
+                                <i class="pe-7s-clock"></i> <?php echo e($posts[1]->created_at->diffForHumans()); ?>
 
                             </div>
                             <!-- post comment -->
@@ -102,24 +102,20 @@
                                 <!-- image -->
                                 <h3><a href="<?php echo e(route('posts.show', ['id'=>$post->id])); ?>"><?php echo e($post->title); ?></a></h3>
                                 <div class="post-thumb">
-                                    <a href="#">
+                                    <a href="<?php echo e(route('posts.show', ['id'=>$post->id])); ?>">
                                         <img class="img-responsive" src="<?php echo e(Storage::disk('local')->url($post->image)); ?>" alt="">
                                     </a>
                                 </div>
-                                <div class="post-info meta-info-rn">
-                                    <div class="slide">
-                                        <a target="_blank" href="#" class="post-badge btn_six">T</a>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="post-title-author-details">
                                 <div class="post-editor-date">
                                     <div class="post-date">
                                         <i class="pe-7s-clock"></i> Oct 6, 2016
                                     </div>
-                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+
                                 </div>
-                                <p><?php echo e($post->description); ?> <a href=" #">Read more...</a></p>
+                                <p><?php echo e($post->description); ?> <a href="<?php echo e(route('posts.show', ['id'=>$post->id])); ?>">Read more...</a></p>
                             </div>
                         </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
