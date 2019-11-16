@@ -158,10 +158,12 @@
             <div class="col-sm-3">
                 <div class="footer-box footer-logo-address">
                     <!-- address  -->
-                    <img src="images/footer-logo.png" class="img-responsive" alt="">
+                    <img src="<?php echo e(Storage::disk('local')->url('images/logo.png')); ?>" class="img-responsive" alt="">
                     <address>
-                        14L.E Goulburn St, Sydney 2000NSW
-                        <br> Tell: 01922296392
+                        Shuwaikh Area - Press Street
+                        Airport Road - Kuwait
+                        <br> (+965) 22272727 - 22272728
+                        (+965) 22272729
                         <br> Email: <a href="http://news365htmllatest.bdtask.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4220263623312902252f232b2e6c212d2f">[email&#160;protected]</a>
                     </address>
                 </div>
@@ -214,7 +216,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <p><a href="#" class="color-1">bdtask</a> Theme | All right Reserved 2016</p>
+                <p><a href="#" class="color-1">Al-Anba</a> 2019 | All right Reserved 2019</p>
                 <div class="social">
                     <ul>
                         <li><a href="#" class="facebook"><i class="fa  fa-facebook"></i> </a></li>

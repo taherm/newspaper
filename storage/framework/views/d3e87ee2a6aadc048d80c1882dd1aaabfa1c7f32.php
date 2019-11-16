@@ -166,6 +166,9 @@
                 <div class="col-sm-8 col-md-7">
                     <div class="newsticker-inner">
                         <ul class="newsticker">
+                            <?php $__currentLoopData = $posts->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><span class="color-1"><?php echo e($post->category->title); ?></span><a href="#"><?php echo e($post->title); ?></a></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <li><span class="color-1">Fashion</span><a href="#">Etiam imperdiet volutpat libero eu
                                     tristique.imperdiet volutpat libero eu tristique.</a></li>
                             <li><span class="color-2">International</span><a href="#">Curabitur porttitor ante eget

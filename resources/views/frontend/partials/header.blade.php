@@ -166,6 +166,9 @@
                 <div class="col-sm-8 col-md-7">
                     <div class="newsticker-inner">
                         <ul class="newsticker">
+                            @foreach($posts->take(3) as $post)
+                            <li><span class="color-1">{{$post->category->title}}</span><a href="#">{{$post->title}}</a></li>
+                            @endforeach
                             <li><span class="color-1">Fashion</span><a href="#">Etiam imperdiet volutpat libero eu
                                     tristique.imperdiet volutpat libero eu tristique.</a></li>
                             <li><span class="color-2">International</span><a href="#">Curabitur porttitor ante eget
