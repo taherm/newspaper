@@ -13,23 +13,20 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::all();
-        //$category_with_children = Category::with('children')->get();
-        $categories = Category::all();
-        //dd($categories);
-        $ads = Ad::all();
-        // $root_categories = Category::whereNull('parent_id')->get();
-        //dd($posts->take(1));
-        return view('frontend.index', compact('posts', 'categories', 'ads'));
+        //$ads = Ad::all();
+        //dd($posts->take(5));
+        return view('frontend.index', compact('posts'));
     }
 
 
     public function showpost($id)
     {
+        $posts = Post::all();
         $post = Post::find($id);
-        $categories = Category::all();
+
         $ads = Ad::all();
         //dd($post);
-        return view('frontend.post', compact('post', 'categories', 'ads'));
+        return view('frontend.post', compact('post', 'posts', 'ads'));
     }
 
     public function changeLanguage()
@@ -42,29 +39,30 @@ class HomeController extends Controller
 
     public function category($id)
     {
-        $categories = Category::all();
+
         $current_category = Category::find($id);
         $posts = $current_category->posts;
         //dd($posts[2]->user);
         // dd($posts);
         $ads = Ad::all();
-        return view('frontend.category', compact('categories', 'posts', 'current_category', 'ads'));
+        return view('frontend.category', compact('posts', 'current_category', 'ads'));
     }
 
 
     public function search_results()
     {
-        $posts = $_GET['posts'];
-        $categories = Category::all();
+        $search_name = $_GET['posts'];
+        //$categories = Category::all();
         //$current_category = Category::find($id);
         //$posts = $current_category->posts;
         //dd($posts[2]->user);
         // dd($posts);
         $ads = Ad::all();
+        $posts = Post::all();
         $search_data = \App\Post::where([
-            ['title_en', 'LIKE', '%' . $posts . '%'],
+            ['title_en', 'LIKE', '%' . $search_name . '%'],
         ])->get();
         //dd($data);
-        return view('frontend.search_results', compact('search_data', 'ads', 'categories', 'posts'));
+        return view('frontend.search_results', compact('search_data', 'ads', 'search_name', 'posts'));
     }
 }

@@ -14,7 +14,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        view()->composer(['frontend.partials.header'], function ($view) {
+
+            $view->with('categories', \App\Category::all());
+        });
+
+        view()->composer(['frontend.index'], function ($view) {
+
+            $view->with('ads', \App\Ad::all());
+        });
     }
 
     /**

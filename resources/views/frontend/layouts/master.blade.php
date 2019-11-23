@@ -8,7 +8,7 @@
 <body>
     <div class="se-pre-con"></div>
     @include('frontend.partials.header')
-
+    @include('frontend.partials.slider')
     @yield('content')
 
     <!-- footer Area

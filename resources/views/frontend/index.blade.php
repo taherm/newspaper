@@ -2,88 +2,7 @@
 @section('content')
 <!-- newsfeed Area
         ============================================ -->
-<section class="news-feed">
-    <div class="container">
-        <div class="row row-margin">
-            <div class="col-sm-3 hidden-xs col-padding">
-                <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
-                    <div class="post-thumb img-zoom-in">
-                        <a href="#">
-                            <img class="entry-thumb" src="{{Storage::disk('local')->url($posts[0]->image)}}" alt="">
-                        </a>
-                    </div>
-                    <div class="post-info">
-                        <span class="color-1">{{$posts[0]->category->title}}</span>
-                        <h3 class="post-title post-title-size"><a href="{{ route('posts.show', ['id'=>$posts[0]->id]) }}" rel="bookmark">{{$posts[0]->title}} </a></h3>
-                        <div class="post-editor-date">
-                            <!-- post date -->
-                            <div class="post-date">
-                                <i class="pe-7s-clock"></i> {{$posts[0]->created_at->diffForHumans()}}
-                            </div>
-                            <!-- post comment -->
-                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                            <!-- read more -->
-                            <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6 col-sm-6 col-padding">
-                <div id="news-feed-carousel" class="owl-carousel owl-theme">
-                    @foreach($posts as $post)
-                    <div class="item">
-                        <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
-                            <div class="post-thumb img-zoom-in">
-                                <a href="#">
-                                    <img class="entry-thumb" src="{{Storage::disk('local')->url($post->image)}}" alt="">
-                                </a>
-                            </div>
-                            <div class="post-info">
-                                <span class="color-2">{{$post->category->title}} </span>
-                                <h3 class="post-title"><a href="{{ route('posts.show', ['id'=>$post->id]) }}" rel="bookmark">{{$post->title}} </a></h3>
-                                <div class="post-editor-date">
-                                    <!-- post date -->
-                                    <div class="post-date">
-                                        <i class="pe-7s-clock"></i>{{$post->created_at->diffForHumans()}}
-                                    </div>
-                                    <!-- post comment -->
-                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                    <!-- read more -->
-                                    <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
 
-                </div>
-            </div>
-            <div class="col-sm-3 hidden-xs col-padding">
-                <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
-                    <div class="post-thumb img-zoom-in">
-                        <a href="#">
-                            <img class="entry-thumb" src="{{Storage::disk('local')->url($posts[1]->image)}}" alt="">
-                        </a>
-                    </div>
-                    <div class="post-info">
-                        <span class="color-5">{{$posts[1]->category->title}} </span>
-                        <h3 class="post-title post-title-size"><a href="{{ route('posts.show', ['id'=>$posts[1]->id]) }}" rel="bookmark">{{$posts[1]->title}} </a></h3>
-                        <div class="post-editor-date">
-                            <!-- post date -->
-                            <div class="post-date">
-                                <i class="pe-7s-clock"></i> {{$posts[1]->created_at->diffForHumans()}}
-                            </div>
-                            <!-- post comment -->
-                            <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                            <!-- read more -->
-                            <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-sm-8">
@@ -91,159 +10,36 @@
             <section class="recent_news_inner">
                 <h3 class="category-headding ">RECENT NEWS</h3>
                 <div class="headding-border"></div>
-                <div class="row">
-                    <div id="content-slide" class="owl-carousel">
-                        <!-- item-1 -->
-                        @foreach($posts as $post)
-                        <div class="item">
-                            <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
-                                <!-- image -->
-                                <h3><a href="{{ route('posts.show', ['id'=>$post->id]) }}">{{$post->title}}</a></h3>
-                                <div class="post-thumb">
-                                    <a href="{{ route('posts.show', ['id'=>$post->id]) }}">
-                                        <img class="img-responsive" src="{{Storage::disk('local')->url($post->image)}}" alt="">
-                                    </a>
-                                </div>
 
-                            </div>
-                            <div class="post-title-author-details">
-                                <div class="post-editor-date">
-                                    <div class="post-date">
-                                        <i class="pe-7s-clock"></i> Oct 6, 2016
-                                    </div>
-
-                                </div>
-                                <p>{{$post->description}} <a href="{{ route('posts.show', ['id'=>$post->id]) }}">Read more...</a></p>
-                            </div>
-                        </div>
-                        @endforeach
-                        <!-- item-2 -->
-                        <div class="item">
-                            <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                                <!-- image -->
-                                <h3><a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text.</a></h3>
-                                <div class="post-thumb">
-                                    <a href="#">
-                                        <img class="img-responsive" src="images/recent_news_02.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-info meta-info-rn">
-                                    <div class="slide">
-                                        <a target="_blank" href="#" class="post-badge btn_sev">I</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-title-author-details">
-                                <div class="post-editor-date">
-                                    <div class="post-date">
-                                        <i class="pe-7s-clock"></i> Oct 6, 2016
-                                    </div>
-                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                </div>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text <a href="#">Read more...</a></p>
-                            </div>
-                        </div>
-                        <!-- item-3 -->
-                        <div class="item">
-                            <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-                                <!-- image -->
-                                <h3><a href="#">There are many variations of passages of Lorem Ipsum available</a></h3>
-                                <div class="post-thumb">
-                                    <a href="#">
-                                        <img class="img-responsive" src="images/recent_news_03.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-info meta-info-rn">
-                                    <div class="slide">
-                                        <a target="_blank" href="#" class="post-badge btn_five">B</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-title-author-details">
-                                <div class="post-editor-date">
-                                    <div class="post-date">
-                                        <i class="pe-7s-clock"></i> Oct 6, 2016
-                                    </div>
-                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                </div>
-                                <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true <a href="#">Read more...</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row rn_block">
+                    @foreach($posts as $post)
                     <div class="col-md-4 col-sm-6 padd">
                         <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
                             <!-- image -->
                             <div class="post-thumb">
-                                <a href="#">
-                                    <img class="img-responsive" src="images/recent_news_04.jpg" alt="">
+                                <a href="{{ route('posts.show', ['id'=>$post->id]) }}">
+                                    <img class="img-responsive" src="{{Storage::disk('local')->url($post->image)}}" alt="">
                                 </a>
                             </div>
                             <div class="post-info meta-info-rn">
                                 <div class="slide">
-                                    <a target="_blank" href="#" class="post-badge btn_eight">H</a>
+                                    <a target="_blank" href="#" class="color-1">{{$post->category->title}}</a>
                                 </div>
                             </div>
                         </div>
                         <div class="post-title-author-details">
-                            <h4><a href="#">World Econmy Changing and Affecting in 3rd ...</a></h4>
+                            <h4><a href="{{ route('posts.show', ['id'=>$post->id]) }}">{{$post->title}}</a></h4>
                             <div class="post-editor-date">
                                 <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
+                                    <i class="pe-7s-clock"></i> {{$posts[0]->created_at->diffForHumans()}}
                                 </div>
                                 <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 padd">
-                        <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <!-- image -->
-                            <div class="post-thumb">
-                                <a href="#">
-                                    <img class="img-responsive" src="images/recent_news_05.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="post-info meta-info-rn">
-                                <div class="slide">
-                                    <a target="_blank" href="#" class="post-badge btn_nine">p</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-title-author-details">
-                            <h4><a href="#">It is a long established fact that a reader will be ...</a></h4>
-                            <div class="post-editor-date">
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 hidden-sm padd">
-                        <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-                            <!-- image -->
-                            <div class="post-thumb">
-                                <a href="#">
-                                    <img class="img-responsive" src="images/recent_news_06.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="post-info meta-info-rn">
-                                <div class="slide">
-                                    <a target="_blank" href="#" class="post-badge btn_one">F</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-title-author-details">
-                            <h4><a href="#">Various versions have evolved over the years, ...</a></h4>
-                            <div class="post-editor-date">
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
+
                 </div>
             </section>
             <!-- Politics Area
@@ -711,156 +507,7 @@
 <!-- row end -->
 </div>
 <!-- container end -->
-<!-- Weekly News Area
-        ============================================ -->
-<section class="weekly-news-inner">
-    <div class="container">
-        <div class="row row-margin">
-            <h3 class="category-headding ">WEEKLY NEWS</h3>
-            <div class="headding-border bg-color-1"></div>
-            <div id="content-slide-4" class="owl-carousel">
-                <div class="item">
-                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
-                        <div class="post-thumb img-zoom-in">
-                            <a href="#">
-                                <img class="entry-thumb" src="images/weekly-news-01.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-info">
-                            <span class="color-4">FASHION </span>
-                            <h3 class="post-title"><a href="#" rel="bookmark">The 20 free things in Sydney with your girlfriend </a></h3>
-                            <div class="post-editor-date">
-                                <!-- post date -->
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <!-- post comment -->
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                <!-- read more -->
-                                <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="post-thumb img-zoom-in">
-                            <a href="#">
-                                <img class="entry-thumb" src="images/weekly-news-05.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-info">
-                            <span class="color-1">SPORTS </span>
-                            <h3 class="post-title"><a href="#" rel="bookmark">The 20 free things in Sydney with your girlfriend </a></h3>
-                            <div class="post-editor-date">
-                                <!-- post date -->
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <!-- post comment -->
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                <!-- read more -->
-                                <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <div class="post-thumb img-zoom-in">
-                            <a href="#">
-                                <img class="entry-thumb" src="images/weekly-news-02.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-info">
-                            <span class="color-2">TECHNOLOGY </span>
-                            <h3 class="post-title"><a href="#" rel="bookmark">The 20 free things in Sydney with your girlfriend </a></h3>
-                            <div class="post-editor-date">
-                                <!-- post date -->
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <!-- post comment -->
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                <!-- read more -->
-                                <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                        <div class="post-thumb img-zoom-in">
-                            <a href="#">
-                                <img class="entry-thumb" src="images/weekly-news-03.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-info">
-                            <span class="color-5">BUSINESS </span>
-                            <h3 class="post-title"><a href="#" rel="bookmark">The 20 free things in Sydney with your girlfriend </a></h3>
-                            <div class="post-editor-date">
-                                <!-- post date -->
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <!-- post comment -->
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                <!-- read more -->
-                                <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="post-thumb img-zoom-in">
-                            <a href="#">
-                                <img class="entry-thumb" src="images/weekly-news-04.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-info">
-                            <span class="color-3">HEALTH </span>
-                            <h3 class="post-title"><a href="#" rel="bookmark">The 20 free things in Sydney with your girlfriend </a></h3>
-                            <div class="post-editor-date">
-                                <!-- post date -->
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <!-- post comment -->
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                <!-- read more -->
-                                <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="post-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                        <div class="post-thumb img-zoom-in">
-                            <a href="#">
-                                <img class="entry-thumb" src="images/weekly-news-06.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-info">
-                            <span class="color-2">INTERNATIONAL </span>
-                            <h3 class="post-title"><a href="#" rel="bookmark">The 20 free things in Sydney with your girlfriend </a></h3>
-                            <div class="post-editor-date">
-                                <!-- post date -->
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <!-- post comment -->
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                <!-- read more -->
-                                <a class="readmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@include('frontend.partials.mid_slider')
 <!-- second content -->
 <section>
     <div class="container">
@@ -1490,7 +1137,7 @@
             <div class="col-sm-8">
                 <!-- article -->
                 <div class="add_logo">
-                    <a href="#"><img src="images/top-bannner2.jpg" class="img-responsive" alt=""></a>
+                    <a href="http://{{$ads[4]->url}}"><img src="{{Storage::disk('local')->url($ads[4]->image)}}" class="img-responsive" alt=""></a>
                 </div>
                 <section class="articale-inner">
                     <h3 class="category-headding ">ARTICLE</h3>

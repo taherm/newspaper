@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Search Results for {{$posts}}</h1>
+                <h1>Search Results for {{$search_name}}</h1>
                 <div class="breadcrumbs">
                     <ul>
                         <li><i class="pe-7s-home"></i> <a href="/" title="">Home</a></li>
