@@ -271,7 +271,7 @@
                 <div class="banner-add">
                     <!-- add -->
                     <span class="add-title">- Advertisement -</span>
-                    <a href="#"><img src="images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                    <a href="#"><img src="{{Storage::disk('local')->url($ads[1]->image)}}" class="img-responsive center-block" alt=""></a>
                 </div>
                 <div class="tab-inner">
                     <ul class="tabs">

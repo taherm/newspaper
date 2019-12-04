@@ -26,7 +26,7 @@
             </div>
             <div class="col-xs-12 col-md-12 col-sm-6 col-padding">
                 <div id="news-feed-carousel" class="owl-carousel owl-theme">
-                    @foreach($posts as $post)
+                    @foreach($slider as $post)
                     <div class="item">
                         <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
                             <div class="post-thumb img-zoom-in">
@@ -54,7 +54,7 @@
 
                 </div>
             </div>
-            <div class="col-sm-3 hidden-xs col-padding hidden">
+          <div class="col-sm-3 hidden-xs col-padding hidden">
                 <div class="post-wrapper wow fadeIn" data-wow-duration="2s">
                     <div class="post-thumb img-zoom-in">
                         <a href="#">

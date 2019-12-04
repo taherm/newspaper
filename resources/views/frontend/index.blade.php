@@ -2,7 +2,7 @@
 @section('content')
 <!-- newsfeed Area
         ============================================ -->
-
+        @include('frontend.partials.slider')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-sm-8">

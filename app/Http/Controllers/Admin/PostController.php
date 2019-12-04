@@ -47,7 +47,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
+        //dd(Auth::user()->id);
         $this->validate($request, [
             'title_en' => 'required',
             'title_ar' => 'required',
@@ -58,7 +58,7 @@ class PostController extends Controller
         ]);
         $imageName =  $request->image->store('public/images');
 
-        Post::create(['title_en' => $request->title_en, 'category_id' => $request->category, 'title_ar' => $request->title_ar, 'description_en' => $request->description_en, 'description_ar' => $request->description_ar, 'image' => $imageName]);
+        Post::create(['user_id' => Auth::user()->id, 'title_en' => $request->title_en, 'category_id' => $request->category, 'title_ar' => $request->title_ar, 'description_en' => $request->description_en, 'description_ar' => $request->description_ar, 'image' => $imageName]);
         session()->flash('message', 'Post Created!');
         return redirect(route('post.index'));
     }

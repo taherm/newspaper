@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
 <!-- newsfeed Area
         ============================================ -->
-
+        <?php echo $__env->make('frontend.partials.slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-sm-8">

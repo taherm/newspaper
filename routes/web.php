@@ -26,6 +26,9 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('/category/{id}', 'HomeController@category')->name('category.posts');
     Route::get('/search_results', 'HomeController@search_results')->name('search');
+    Route::get('/contact_us', function () {
+        return view('frontend.contact');
+    })->name('contact');
 });
 
 

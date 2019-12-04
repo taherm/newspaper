@@ -16,12 +16,17 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer(['frontend.partials.header'], function ($view) {
 
-            $view->with('categories', \App\Category::all());
+            $view->with('categories', \App\Category::all())->with('posts', \App\Post::all())->with('ads', \App\Ad::all());
         });
 
         view()->composer(['frontend.index'], function ($view) {
 
             $view->with('ads', \App\Ad::all());
+        });
+
+        view()->composer(['frontend.partials.slider'], function ($view) {
+
+            $view->with('slider', \App\Post::latest()->take(2)->get());
         });
     }
 

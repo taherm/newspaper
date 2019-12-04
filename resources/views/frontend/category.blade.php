@@ -38,74 +38,9 @@
                 </div>
             </div>
             @endforeach
+            {{ $posts->links() }}
             <!--Post list-->
-            <div class="post-style2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                <a href="#"><img src="images/category/category-post-12.jpg" alt=""></a>
-                <div class="post-style2-detail">
-                    <h3><a href="#" title="">Lorem Ipsum is simply dummy text of the printing .</a></h3>
-                    <div class="date">
-                        <ul>
-                            <li><img src="images/comment-02.jpg" class="img-responsive" alt=""></li>
-                            <li>By <a title="" href="#"><span>Naeem Khan</span></a> --</li>
-                            <li><a title="" href="#">11 Nov 2015</a> --</li>
-                            <li><a title="" href="#"><span>275 Comments</span></a></li>
-                        </ul>
-                    </div>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh.</p>
-                    <button type="button" class="btn btn-style">Reade more</button>
-                </div>
-            </div>
-            <!-- Post list -->
-            <div class="post-style2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <a href="#"><img src="images/category/category-post-13.jpg" alt=""></a>
-                <div class="post-style2-detail">
-                    <h3><a href="#" title="">If you are going to use a passage of Lorem Ipsum .</a></h3>
-                    <div class="date">
-                        <ul>
-                            <li><img src="images/comment-01.jpg" class="img-responsive" alt=""></li>
-                            <li>By <a title="" href="#"><span>Naeem Khan</span></a> --</li>
-                            <li><a title="" href="#">11 Nov 2015</a> --</li>
-                            <li><a title="" href="#"><span>275 Comments</span></a></li>
-                        </ul>
-                    </div>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh.</p>
-                    <button type="button" class="btn btn-style">Reade more</button>
-                </div>
-            </div>
-            <!-- Post list -->
-            <div class="post-style2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-                <a href="#"><img src="images/category/category-post-14.jpg" alt=""></a>
-                <div class="post-style2-detail">
-                    <h3><a href="#" title="">Check Out the Amazing Photos of Lauren Conradâ€™s Trip</a></h3>
-                    <div class="date">
-                        <ul>
-                            <li><img src="images/comment-02.jpg" class="img-responsive" alt=""></li>
-                            <li>By <a title="" href="#"><span>Naeem Khan</span></a> --</li>
-                            <li><a title="" href="#">11 Nov 2015</a> --</li>
-                            <li><a title="" href="#"><span>275 Comments</span></a></li>
-                        </ul>
-                    </div>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh.</p>
-                    <button type="button" class="btn btn-style">Reade more</button>
-                </div>
-            </div>
-            <!-- Post list -->
-            <div class="post-style2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                <a href="#"><img src="images/category/category-post-15.jpg" alt=""></a>
-                <div class="post-style2-detail">
-                    <h3><a href="#" title="">Many desktop publishing packages and web page.</a></h3>
-                    <div class="date">
-                        <ul>
-                            <li><img src="images/comment-01.jpg" class="img-responsive" alt=""></li>
-                            <li>By <a title="" href="#"><span>Naeem Khan</span></a> --</li>
-                            <li><a title="" href="#">11 Nov 2015</a> --</li>
-                            <li><a title="" href="#"><span>275 Comments</span></a></li>
-                        </ul>
-                    </div>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh.</p>
-                    <button type="button" class="btn btn-style">Reade more</button>
-                </div>
-            </div>
+
         </div>
         <aside class="col-sm-4 left-padding">
             <div class="input-group search-area">
@@ -115,18 +50,6 @@
                     <button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <!-- social icon -->
-            <h3 class="category-headding ">SOCIAL PIXEL</h3>
-            <div class="headding-border"></div>
-            <div class="social">
-                <ul>
-                    <li><a href="#" class="facebook"><i class="fa  fa-facebook"></i><span>3987</span> </a></li>
-                    <li><a href="#" class="twitter"><i class="fa  fa-twitter"></i><span>3987</span></a></li>
-                    <li><a href="#" class="google"><i class="fa  fa-google-plus"></i><span>3987</span></a></li>
-                    <li><a href="#" class="flickr"><i class="fa fa-flickr"></i><span>3987</span> </a></li>
-                </ul>
-            </div>
-            <!-- /.social icon -->
             <div class="tab-inner">
                 <ul class="tabs">
                     <li><a href="#">POPULAR</a></li>
@@ -300,37 +223,11 @@
             <div class="banner-add">
                 <!-- add -->
                 <span class="add-title">- Advertisement -</span>
-                <a href="#"><img src="images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                <a href="#"><img src="{{Storage::disk('local')->url($ads[1]->image)}}" class="img-responsive center-block" alt=""></a>
             </div>
         </aside>
     </div>
     <!-- pagination -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" class="prev">
-                            <i class="pe-7s-angle-left"></i>
-                        </a>
-                    </li>
-                    <li> <a href="#">1</a></li>
-                    <li> <a href="#" class="active">2</a></li>
-                    <li> <a href="#">3</a></li>
-                    <li> <a href="#">4</a></li>
-                    <li> ... </li>
-                    <li> <a href="#">15</a></li>
-                    <li>
-                        <a href="#" class="next"> <i class="pe-7s-angle-right"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-12">
-                <div class="banner">
-                    <img src="images/top-bannner2.jpg" class="img-responsive center-block" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 @endsection

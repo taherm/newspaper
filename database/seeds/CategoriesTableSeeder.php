@@ -19,15 +19,6 @@ class CategoriesTableSeeder extends Seeder
         \DB::table('categories')->insert(array (
             0 => 
             array (
-                'id' => 3,
-                'title_en' => 'Home',
-                'title_ar' => 'الرئيسية',
-                'parent_id' => 0,
-                'created_at' => '2019-08-26 15:04:28',
-                'updated_at' => '2019-08-26 15:04:28',
-            ),
-            1 => 
-            array (
                 'id' => 4,
                 'title_en' => 'Kuwait News',
                 'title_ar' => 'أخبار الكويت',
@@ -35,7 +26,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:05:21',
                 'updated_at' => '2019-08-26 15:05:21',
             ),
-            2 => 
+            1 => 
             array (
                 'id' => 5,
                 'title_en' => 'Literature and Culture',
@@ -44,7 +35,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:07:23',
                 'updated_at' => '2019-08-26 15:07:23',
             ),
-            3 => 
+            2 => 
             array (
                 'id' => 6,
                 'title_en' => 'Arabic and International',
@@ -53,7 +44,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:07:58',
                 'updated_at' => '2019-08-26 15:07:58',
             ),
-            4 => 
+            3 => 
             array (
                 'id' => 7,
                 'title_en' => 'Economy and Business',
@@ -62,7 +53,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:08:28',
                 'updated_at' => '2019-08-26 15:08:28',
             ),
-            5 => 
+            4 => 
             array (
                 'id' => 8,
                 'title_en' => 'Sports',
@@ -71,7 +62,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:09:57',
                 'updated_at' => '2019-08-26 15:09:57',
             ),
-            6 => 
+            5 => 
             array (
                 'id' => 9,
                 'title_en' => 'The Society',
@@ -80,7 +71,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:10:23',
                 'updated_at' => '2019-08-26 15:10:23',
             ),
-            7 => 
+            6 => 
             array (
                 'id' => 10,
                 'title_en' => 'Arts',
@@ -89,7 +80,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:11:06',
                 'updated_at' => '2019-08-26 15:11:06',
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 11,
                 'title_en' => 'Mix',
@@ -98,7 +89,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:11:35',
                 'updated_at' => '2019-08-26 15:11:35',
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 12,
                 'title_en' => 'Around the World',
@@ -107,7 +98,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:13:07',
                 'updated_at' => '2019-08-26 15:13:07',
             ),
-            10 => 
+            9 => 
             array (
                 'id' => 13,
                 'title_en' => 'Book and Opinions',
@@ -116,7 +107,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:13:35',
                 'updated_at' => '2019-08-26 15:13:35',
             ),
-            11 => 
+            10 => 
             array (
                 'id' => 14,
                 'title_en' => 'Special Reports',
@@ -125,7 +116,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:14:17',
                 'updated_at' => '2019-08-26 15:14:17',
             ),
-            12 => 
+            11 => 
             array (
                 'id' => 15,
                 'title_en' => 'Last',
@@ -134,7 +125,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2019-08-26 15:15:06',
                 'updated_at' => '2019-08-26 15:15:06',
             ),
-            13 => 
+            12 => 
             array (
                 'id' => 16,
                 'title_en' => 'Official News',

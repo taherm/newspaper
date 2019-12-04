@@ -232,15 +232,7 @@
         <nav class="navbar">
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
-
-                        <a href="" class="dropdown-toggle category03" data-toggle="dropdown">Language <span class="pe-7s-angle-down"></span></a>
-                        <ul class="dropdown-menu menu-slide">
-
-                            <li><a href="{{ route('language.change',['locale' => 'en']) }}">English</a></li>
-                            <li><a href="{{ route('language.change',['locale' => 'ar']) }}">Arabic</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/" class="category06">Home</a></li>
                     @foreach($categories as $category)
                     @if($category->children->count() > 0)
                     <li class="dropdown">
@@ -257,8 +249,17 @@
                     @endif
                     @endforeach
 
+                    <li class="dropdown">
 
+                        <a href="" class="dropdown-toggle category03" data-toggle="dropdown">Language <span class="pe-7s-angle-down"></span></a>
+                        <ul class="dropdown-menu menu-slide">
 
+                            <li><a href="{{ route('language.change',['locale' => 'en']) }}">English</a></li>
+                            <li><a href="{{ route('language.change',['locale' => 'ar']) }}">Arabic</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ route('contact') }}" class="category06">Contact Us</a></li>
+                    <li><a href="/" class="category06">About Us</a></li>
 
                 </ul>
             </div>

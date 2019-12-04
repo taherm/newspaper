@@ -42,21 +42,21 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Title English</label>
-                                    <input type="text" class="form-control" name="title_en" value=<?php echo e($post->title_en); ?>>
+                                    <input type="text" class="form-control" name="title_en" value="<?php echo e($post->title_en); ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Title Arabic</label>
-                                    <input type="text" class="form-control" name="title_ar" value=<?php echo e($post->title_ar); ?>>
+                                    <input type="text" class="form-control" name="title_ar" value="<?php echo e($post->title_ar); ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Description English</label>
-                                    <input type="text" class="form-control" name="description_en" value=<?php echo e($post->description_en); ?>>
+                                    <input type="text" class="form-control" name="description_en" value="<?php echo e($post->description_en); ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Description Arabic</label>
-                                    <input type="text" class="form-control" name="description_ar" value=<?php echo e($post->description_ar); ?>>
+                                    <input type="text" class="form-control" name="description_ar" value="<?php echo e($post->description_ar); ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile" class="col-md-3 control-label">Image</label>
