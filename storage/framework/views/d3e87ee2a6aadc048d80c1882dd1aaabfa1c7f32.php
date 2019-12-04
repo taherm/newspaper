@@ -17,70 +17,25 @@
                     </li>
                     <li><a href="/">Home</a></li>
                     <li>
-                        <a href="#">All pages<span class="fa arrow"></span></a>
+                        <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if($category->children->count() > 0): ?>
+                        <a href="<?php echo e(route('category.posts', ['id'=>$category->id])); ?>"><?php echo e($category->title); ?><span class="fa arrow"></span></a>
+
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Home <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="home-style-one.html">Home style one</a> </li>
-                                    <li><a href="home-style-two.html">Home style two</a></li>
-                                    <li><a href="home-style-three.html">Home style three</a></li>
-                                    <li><a href="home-style-four.html">Home style four</a></li>
-                                    <li><a href="home-style-five.html">Home style five</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
+                            <?php $__currentLoopData = $category->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $submenu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><a href="<?php echo e(route('category.posts', ['id'=>$submenu->id])); ?>"><?php echo e($submenu->title); ?></a>
                             </li>
-                            <li>
-                                <a href="#">Categories <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="category-style-one.html">Category style one</a> </li>
-                                    <li><a href="category-style-two.html">Category style two</a></li>
-                                    <li><a href="category-style-three.html">Category style three</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                            <li>
-                                <a href="#">Archive <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="archive-one.html">Archive style one</a> </li>
-                                    <li><a href="archive-two.html">Archive style two</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                            <li>
-                                <a href="#">News <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="details-style-one.html">News post one</a> </li>
-                                    <li><a href="details-style-two.html">News post two</a></li>
-                                    <li><a href="details-style-three.html">News post three</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                            <li>
-                                <a href="#">Contact <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="contact-style-one.html">Contact style one</a> </li>
-                                    <li><a href="contact-style-two.html">Contact style two</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                            <li><a href="login%26registration.html">Login & Registration</a></li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li><a href="#">International</a></li>
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Lifestyle</a></li>
-                    <li>
-                        <a href="#">Contact<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="contact-style-one.html">Contact style one</a> </li>
-                            <li><a href="contact-style-two.html">Contact style two</a></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </li>
+                    <?php endif; ?>
+                    <?php if($category->children->count() == 0 && $category->parent_id==0): ?>
+                    <li><a href="<?php echo e(route('category.posts', ['id'=>$category->id])); ?>"><?php echo e($category->title); ?></a></li>
+                    <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </li>
+                    <li><a href="<?php echo e(route('contact')); ?>">Contact Us</a></li>
+                    <li><a href="/">About Us</a></li>
                     <!-- social icon -->
                     <li>
                         <div class="social">
@@ -167,7 +122,8 @@
                     <div class="newsticker-inner">
                         <ul class="newsticker">
                             <?php $__currentLoopData = $posts->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li><span class="color-1"><?php echo e($post->category->title); ?></span><a href="#"><?php echo e($post->title); ?></a></li>
+                            <li><span class="color-1"><?php echo e($post->category->title); ?></span><a href="#"><?php echo e($post->title); ?></a>
+                            </li>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <li><span class="color-1">Fashion</span><a href="#">Etiam imperdiet volutpat libero eu
                                     tristique.imperdiet volutpat libero eu tristique.</a></li>
@@ -239,7 +195,8 @@
                         <a href="<?php echo e(route('category.posts', ['id'=>$category->id])); ?>" class="dropdown-toggle category03" data-toggle="dropdown"><?php echo e($category->title); ?> <span class="pe-7s-angle-down"></span></a>
                         <ul class="dropdown-menu menu-slide">
                             <?php $__currentLoopData = $category->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $submenu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li><a href="<?php echo e(route('category.posts', ['id'=>$submenu->id])); ?>"><?php echo e($submenu->title); ?></a></li>
+                            <li><a href="<?php echo e(route('category.posts', ['id'=>$submenu->id])); ?>"><?php echo e($submenu->title); ?></a>
+                            </li>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </li>

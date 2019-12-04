@@ -17,70 +17,25 @@
                     </li>
                     <li><a href="/">Home</a></li>
                     <li>
-                        <a href="#">All pages<span class="fa arrow"></span></a>
+                        @foreach($categories as $category)
+                        @if($category->children->count() > 0)
+                        <a href="{{ route('category.posts', ['id'=>$category->id]) }}">{{$category->title}}<span class="fa arrow"></span></a>
+
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Home <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="home-style-one.html">Home style one</a> </li>
-                                    <li><a href="home-style-two.html">Home style two</a></li>
-                                    <li><a href="home-style-three.html">Home style three</a></li>
-                                    <li><a href="home-style-four.html">Home style four</a></li>
-                                    <li><a href="home-style-five.html">Home style five</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
+                            @foreach($category->children as $submenu)
+                            <li><a href="{{ route('category.posts', ['id'=>$submenu->id]) }}">{{$submenu->title}}</a>
                             </li>
-                            <li>
-                                <a href="#">Categories <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="category-style-one.html">Category style one</a> </li>
-                                    <li><a href="category-style-two.html">Category style two</a></li>
-                                    <li><a href="category-style-three.html">Category style three</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                            <li>
-                                <a href="#">Archive <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="archive-one.html">Archive style one</a> </li>
-                                    <li><a href="archive-two.html">Archive style two</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                            <li>
-                                <a href="#">News <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="details-style-one.html">News post one</a> </li>
-                                    <li><a href="details-style-two.html">News post two</a></li>
-                                    <li><a href="details-style-three.html">News post three</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                            <li>
-                                <a href="#">Contact <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="contact-style-one.html">Contact style one</a> </li>
-                                    <li><a href="contact-style-two.html">Contact style two</a></li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                            <li><a href="login%26registration.html">Login & Registration</a></li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li><a href="#">International</a></li>
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Lifestyle</a></li>
-                    <li>
-                        <a href="#">Contact<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="contact-style-one.html">Contact style one</a> </li>
-                            <li><a href="contact-style-two.html">Contact style two</a></li>
+                            @endforeach
                         </ul>
                     </li>
+                    @endif
+                    @if($category->children->count() == 0 && $category->parent_id==0)
+                    <li><a href="{{ route('category.posts', ['id'=>$category->id]) }}">{{$category->title}}</a></li>
+                    @endif
+                    @endforeach
+                    </li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                    <li><a href="/">About Us</a></li>
                     <!-- social icon -->
                     <li>
                         <div class="social">
@@ -167,7 +122,8 @@
                     <div class="newsticker-inner">
                         <ul class="newsticker">
                             @foreach($posts->take(3) as $post)
-                            <li><span class="color-1">{{$post->category->title}}</span><a href="#">{{$post->title}}</a></li>
+                            <li><span class="color-1">{{$post->category->title}}</span><a href="#">{{$post->title}}</a>
+                            </li>
                             @endforeach
                             <li><span class="color-1">Fashion</span><a href="#">Etiam imperdiet volutpat libero eu
                                     tristique.imperdiet volutpat libero eu tristique.</a></li>
@@ -215,7 +171,7 @@
                     <div class="header-logo">
                         <!-- logo -->
                         <a href="/">
-                            <img class="td-retina-data img-responsive" src="{{Storage::disk('local')->url('images/logo.png')}}" alt="">
+                            <img class="td-retina-data img-responsive" src="{{asset('storage/images/logo.png')}}" alt="">
                         </a>
                     </div>
                 </div>
@@ -239,7 +195,8 @@
                         <a href="{{ route('category.posts', ['id'=>$category->id]) }}" class="dropdown-toggle category03" data-toggle="dropdown">{{$category->title}} <span class="pe-7s-angle-down"></span></a>
                         <ul class="dropdown-menu menu-slide">
                             @foreach($category->children as $submenu)
-                            <li><a href="{{ route('category.posts', ['id'=>$submenu->id]) }}">{{$submenu->title}}</a></li>
+                            <li><a href="{{ route('category.posts', ['id'=>$submenu->id]) }}">{{$submenu->title}}</a>
+                            </li>
                             @endforeach
                         </ul>
                     </li>
