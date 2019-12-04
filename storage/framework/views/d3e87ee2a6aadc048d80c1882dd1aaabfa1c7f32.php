@@ -215,7 +215,7 @@
                     <div class="header-logo">
                         <!-- logo -->
                         <a href="/">
-                            <img class="td-retina-data img-responsive" src="<?php echo e(asset('images/logo.png')); ?>" alt="">
+                            <img class="td-retina-data img-responsive" src="<?php echo e(asset('storage/images/logo.png')); ?>" alt="">
                         </a>
                     </div>
                 </div>

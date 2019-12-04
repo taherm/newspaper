@@ -215,7 +215,7 @@
                     <div class="header-logo">
                         <!-- logo -->
                         <a href="/">
-                            <img class="td-retina-data img-responsive" src="{{asset('images/logo.png')}}" alt="">
+                            <img class="td-retina-data img-responsive" src="{{Storage::disk('local')->url('images/logo.png')}}" alt="">
                         </a>
                     </div>
                 </div>
